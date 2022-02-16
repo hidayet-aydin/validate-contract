@@ -1,0 +1,9 @@
+## Folders
+node_modules
+
+## Files
+## Misc
+.DS_Store
+Thumbs.db
+yarn.lock.json
+package-lock.json

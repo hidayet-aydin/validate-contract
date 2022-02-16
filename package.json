@@ -1,0 +1,29 @@
+{
+  "name": "validate-contract",
+  "version": "1.0.0",
+  "description": "JSON schema validator for the server and client sides.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hidayet-aydin/validate-contract.git"
+  },
+  "keywords": [
+    "validation"
+  ],
+  "author": {
+    "name": "hidayet-aydin",
+    "email": "aydin.hid@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hidayet-aydin/validate-contract/issues"
+  },
+  "homepage": "https://github.com/hidayet-aydin/validate-contract#readme",
+  "dependencies": {
+    "validator": "^13.7.0"
+  }
+}
