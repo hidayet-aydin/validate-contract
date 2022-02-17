@@ -1,7 +1,7 @@
 import validator from "validator";
 
 const SchemaObj = function (form_schema, form_params) {
-  this.result = form_schema;
+  this.result = form_schema || [];
   if (form_schema) {
     this.result.forEach((elm) => {
       elm.value = form_params[elm["name"]];

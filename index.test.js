@@ -1,20 +1,15 @@
-import { validation } from "./index";
+import { validation } from "./index.js";
 
-const register_test = async () => {
-  const payload = {
-    register: {
-      uname: "user",
-      email: "user@test.com",
-      password: "12a",
-    },
-  };
-  const form_name = Object.keys(payload)[0];
-  const form_schema = [
-    { name: "email", type: "email", min: 8, max: 50, match: "" },
-    { name: "password", type: "password", min: 3, max: 12, match: "" },
-  ];
-  const res = validation(form_schema, payload[form_name]);
-  console.log(res);
+const payload = {
+  email: "user@test",
+  password: "12",
 };
 
-await register_test();
+const schema = [
+  { name: "email", type: "email", min: 8, max: 50 },
+  { name: "password", type: "password", min: 3, max: 12 },
+];
+
+const result = validation(schema, payload);
+
+console.log(result);
