@@ -1,18 +1,21 @@
 {
   "name": "validate-contract",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "description": "JSON schema validator for the server and client sides.",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "minify": "uglifyjs validate-contract.js -o validator-contract.min.js  --compress --mangle --comments /Copyright/",
+    "build:browser": "node_modules/.bin/browserify index.js -s validate-contract > validate-contract.js && npm run minify"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hidayet-aydin/validate-contract.git"
   },
   "keywords": [
-    "validation"
+    "validator",
+    "validation",
+    "validate"
   ],
   "author": {
     "name": "hidayet-aydin",
@@ -25,5 +28,29 @@
   "homepage": "https://github.com/hidayet-aydin/validate-contract#readme",
   "dependencies": {
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.3",
+    "@babel/core": "^7.17.4",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/register": "^7.17.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "eslint": "^8.9.0",
+    "uglify-js": "^3.15.1"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "@babel/preset-env"
+          ]
+        }
+      ]
+    ]
   }
 }
