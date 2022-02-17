@@ -1,31 +1,38 @@
 {
   "name": "validate-contract",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "JSON schema validator for the server and client sides.",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "minify": "uglifyjs validate-contract.js -o validator-contract.min.js  --compress --mangle --comments /Copyright/",
-    "build:browser": "node_modules/.bin/browserify index.js -s validate-contract > validate-contract.js && npm run minify"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hidayet-aydin/validate-contract.git"
-  },
-  "keywords": [
-    "validator",
-    "validation",
-    "validate"
-  ],
   "author": {
     "name": "hidayet-aydin",
     "email": "aydin.hid@gmail.com"
   },
   "license": "MIT",
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE",
+    "validateContract.js",
+    "validateContract.min.js"
+  ],
+  "keywords": [
+    "validator",
+    "validation",
+    "validate"
+  ],
+  "homepage": "https://github.com/hidayet-aydin/validate-contract#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hidayet-aydin/validate-contract.git"
+  },
   "bugs": {
     "url": "https://github.com/hidayet-aydin/validate-contract/issues"
   },
-  "homepage": "https://github.com/hidayet-aydin/validate-contract#readme",
+  "scripts": {
+    "minify": "uglifyjs validateContract.js -o validateContract.min.js  --compress --mangle --comments /Copyright/",
+    "build:browser": "node_modules/.bin/browserify index.js -s validate-contract > validateContract.js && npm run minify"
+  },
   "dependencies": {
     "validator": "^13.7.0"
   },
