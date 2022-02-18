@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+  </head>
+  <link rel="stylesheet" href="main.css" />
+  <body>
+    <div class="form__container">
+      <h2>Login Form</h2>
+      <label for="uname" default="Username"><b>Username</b></label>
+      <input
+        type="text"
+        name="uname"
+        valid="false"
+        placeholder="Enter Username"
+      />
+
+      <label for="password" default="Password"><b>Password</b></label>
+      <input
+        type="password"
+        name="password"
+        valid="false"
+        placeholder="Enter Password"
+      />
+      <button type="button" name="submit" disabled>Login</button>
+    </div>
+
+    <script src="https://unpkg.com/validate-contract@latest/validateContract.min.js"></script>
+    <script src="validateContract.min.js"></script>
+    <script>
+      const schema = [
+        { type: "string", name: "uname", min: 3, max: 50 },
+        { type: "password", name: "password", min: 3, max: 12 },
+      ];
+    </script>
+    <script src="form.js"></script>
+  </body>
+</html>

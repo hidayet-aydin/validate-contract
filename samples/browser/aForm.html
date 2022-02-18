@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Form</title>
+  </head>
+  <link rel="stylesheet" href="main.css" />
+  <body>
+    <div class="form__container">
+      <h2>A Form</h2>
+      <label for="id_number" default="ID Number"><b>ID Number</b></label>
+      <input
+        type="text"
+        name="id_number"
+        valid="false"
+        placeholder="Enter ID Number"
+      />
+
+      <label for="cellPhone" default="Cell Phone"><b>Cell Phone</b></label>
+      <input
+        type="password"
+        name="cellPhone"
+        valid="false"
+        placeholder="Enter Cell Phone"
+      />
+
+      <button type="button" name="submit" disabled>Login</button>
+    </div>
+
+    <script src="https://unpkg.com/validate-contract@latest/validateContract.min.js"></script>
+    <script src="validateContract.min.js"></script>
+    <script>
+      const schema = [
+        {
+          type: "integer",
+          name: "id_number",
+          min: 10000000000,
+          max: 90000000000,
+        },
+        { type: "phone", name: "cellPhone", min: 0, max: 0 },
+      ];
+    </script>
+    <script src="form.js"></script>
+  </body>
+</html>
