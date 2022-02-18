@@ -1,13 +1,16 @@
 {
   "name": "validate-contract",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "JSON schema validator for the server and client sides.",
   "main": "index.js",
   "type": "module",
   "author": {
-    "name": "hidayet-aydin",
+    "name": "Hidayet AYDIN",
     "email": "aydin.hid@gmail.com"
   },
+  "contributors": [
+    "Okan ALKAN <https://github.com/okannalkann>"
+  ],
   "license": "MIT",
   "files": [
     "index.js",
@@ -30,6 +33,8 @@
     "url": "https://github.com/hidayet-aydin/validate-contract/issues"
   },
   "scripts": {
+    "sample:esm": "nodemon ./samples/esm/sample.js",
+    "sample:browser": "npx serve ./samples/browser -p 8000",
     "minify": "uglifyjs validateContract.js -o validateContract.min.js  --compress --mangle --comments /Copyright/",
     "build:browser": "node_modules/.bin/browserify index.js -s validate-contract > validateContract.js && npm run minify"
   },
@@ -46,6 +51,7 @@
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
     "eslint": "^8.9.0",
+    "nodemon": "^2.0.15",
     "uglify-js": "^3.15.1"
   },
   "browserify": {

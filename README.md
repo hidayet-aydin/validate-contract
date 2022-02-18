@@ -6,19 +6,19 @@ JSON schema validator for the server and client sides.
 
 Install the library with `npm i validate-contract`
 
-## Server-side Usage
+## ECMAScript (ES) Module Usage
 
 ```js
 import { validation } from "validate-contract";
 
 const payload = {
-  email: "user@test",
-  password: "12",
+  user_mail: "user@test",
+  pwd: "12",
 };
 
 const schema = [
-  { name: "email", type: "email", min: 8, max: 50 },
-  { name: "password", type: "password", min: 3, max: 12 },
+  { type: "email", name: "user_mail", min: 8, max: 50 },
+  { type: "password", name: "pwd", min: 3, max: 12 },
 ];
 
 const result = validation(schema, payload);
@@ -26,17 +26,17 @@ const result = validation(schema, payload);
 console.log(result);
 ```
 
-**console**
+**console output**
 
 ```
 [
-  { message: 'Invalid email!', param: 'email' },
-  { message: 'Invalid password!', param: 'password' },
-  { message: 'Length should be min 3 and max 12', param: 'password' }
+  { message: 'Invalid email!', name: 'user_mail' },
+  { message: 'Invalid password!', name: 'pwd' },
+  { message: 'Length should be min 3 and max 12', name: 'pwd' }
 ]
 ```
 
-## Client-side Usage
+## Browser (Client-Side) Usage
 
 ```html
 <!-- CDN -->
@@ -51,8 +51,8 @@ console.log(result);
   };
 
   const schema = [
-    { name: "email", type: "email", min: 8, max: 50 },
-    { name: "password", type: "password", min: 3, max: 12 },
+    { type: "email", name: "email", min: 8, max: 50 },
+    { type: "password", name: "password", min: 3, max: 12 },
   ];
 
   const result = validateContract.validation(schema, payload);
@@ -60,6 +60,15 @@ console.log(result);
   console.log(result);
 </script>
 ```
+
+## List Of The Validation Types
+
+- integer
+- string
+- email
+- password
+- match
+- phone
 
 ## License
 
