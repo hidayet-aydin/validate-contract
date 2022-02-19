@@ -20,7 +20,7 @@
 
       <label for="cellPhone" default="Cell Phone"><b>Cell Phone</b></label>
       <input
-        type="password"
+        type="text"
         name="cellPhone"
         valid="false"
         placeholder="Enter Cell Phone"
@@ -36,10 +36,12 @@
         {
           type: "integer",
           name: "id_number",
-          min: 10000000000,
-          max: 90000000000,
+          options: ["1000", "20000"],
         },
-        { type: "phone", name: "cellPhone", min: 0, max: 0 },
+        {
+          type: "phone",
+          name: "cellPhone",
+        },
       ];
     </script>
     <script src="form.js"></script>

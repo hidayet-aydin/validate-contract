@@ -11,45 +11,38 @@ const payload = {
 
 const schema = [
   {
-    type: "string",
+    type: "length",
     name: "user_name",
-    min: 5,
-    max: 50,
-    options: [],
+    options: ["5", "50"],
+  },
+  {
+    type: "length",
+    name: "mail",
+    options: ["8", "50"],
   },
   {
     type: "email",
     name: "mail",
-    min: 8,
-    max: 50,
     options: [],
   },
   {
     type: "password",
     name: "pass",
-    min: 3,
-    max: 12,
-    options: [],
+    options: ["3", "12"],
   },
   {
     type: "match",
     name: "passConfirm",
-    min: 3,
-    max: 12,
     options: ["pass"],
   },
   {
     type: "integer",
     name: "id_number",
-    min: 0,
-    max: 20000,
-    options: ["pass"],
+    options: ["1000", "20000"],
   },
   {
     type: "phone",
     name: "cellPhone",
-    min: 0,
-    max: 0,
   },
 ];
 

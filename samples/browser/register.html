@@ -19,12 +19,7 @@
       />
 
       <label for="mail" default="Email"><b>Email</b></label>
-      <input
-        type="text"
-        name="mail"
-        valid="false"
-        placeholder="Enter Username"
-      />
+      <input type="text" name="mail" valid="false" placeholder="Enter Email" />
 
       <label for="pass" default="Password"><b>Password</b></label>
       <input
@@ -41,7 +36,7 @@
         type="password"
         name="passConfirm"
         valid="false"
-        placeholder="Password Confirm"
+        placeholder="Enter Password Confirm"
       />
       <button type="button" name="submit" disabled>Login</button>
     </div>
@@ -51,33 +46,30 @@
     <script>
       const schema = [
         {
-          type: "string",
+          type: "length",
           name: "user_name",
-          min: 5,
-          max: 50,
-          options: [],
+          options: ["5", "50"],
+        },
+        {
+          type: "length",
+          name: "mail",
+          options: ["8", "50"],
         },
         {
           type: "email",
           name: "mail",
-          min: 8,
-          max: 50,
           options: [],
         },
         {
           type: "password",
           name: "pass",
-          min: 3,
-          max: 12,
-          options: [],
+          options: ["3", "12"],
         },
         {
           type: "match",
           name: "passConfirm",
-          min: 3,
-          max: 12,
           options: ["pass"],
-        }
+        },
       ];
     </script>
     <script src="form.js"></script>

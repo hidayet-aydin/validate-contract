@@ -32,8 +32,17 @@
     <script src="validateContract.min.js"></script>
     <script>
       const schema = [
-        { type: "string", name: "uname", min: 3, max: 50 },
-        { type: "password", name: "password", min: 3, max: 12 },
+        {
+          type: "length",
+          name: "uname",
+          options: ["5", "50"],
+        },
+        {
+          type: "password",
+          name: "password",
+          options: ["3", "12"],
+        },
+        ,
       ];
     </script>
     <script src="form.js"></script>

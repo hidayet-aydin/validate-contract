@@ -16,12 +16,13 @@ const payload = {
   pwd: "12",
 };
 
-const schema = [
-  { type: "email", name: "user_mail", min: 8, max: 50 },
-  { type: "password", name: "pwd", min: 3, max: 12 },
+const contract = [
+  { type: "length", name: "user_mail", options: ["10", "50"] },
+  { type: "email", name: "user_mail" },
+  { type: "password", name: "pwd", options: ["3", "12"] },
 ];
 
-const result = validation(schema, payload);
+const result = validation(contract, payload);
 
 console.log(result);
 ```
@@ -30,8 +31,8 @@ console.log(result);
 
 ```
 [
+  { message: 'Length should be min 10 and max 50', name: 'user_mail' },
   { message: 'Invalid email!', name: 'user_mail' },
-  { message: 'Invalid password!', name: 'pwd' },
   { message: 'Length should be min 3 and max 12', name: 'pwd' }
 ]
 ```
@@ -50,12 +51,12 @@ console.log(result);
     password: "12",
   };
 
-  const schema = [
-    { type: "email", name: "email", min: 8, max: 50 },
-    { type: "password", name: "password", min: 3, max: 12 },
+  const contract = [
+    { type: "email", name: "email", options: ["8", "50"] },
+    { type: "password", name: "password", options: ["3", "12"] },
   ];
 
-  const result = validateContract.validation(schema, payload);
+  const result = validateContract.validation(contract, payload);
 
   console.log(result);
 </script>
