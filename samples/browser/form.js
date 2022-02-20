@@ -11,7 +11,7 @@ const onChangeHandler = (event) => {
     payload[elm.getAttribute("name")] = elm.value;
   });
 
-  const result = validateContract.validation(schema, payload);
+  const result = validateContract.validate(schema, payload);
 
   console.log("res: ", result);
 
