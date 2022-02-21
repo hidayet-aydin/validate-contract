@@ -127,7 +127,7 @@ You can also insert the `CDN` link in the field at the bottom for javascript.
 ]
 ```
 
-## 3. LIST OF The VALIDATION TYPES
+## 3. LIST OF THE VALIDATION TYPES
 
 ```js
 {
