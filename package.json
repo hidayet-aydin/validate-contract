@@ -13,9 +13,12 @@
   ],
   "license": "MIT",
   "files": [
+    "lib",
+    "samples",
     "index.js",
-    "README.md",
     "LICENSE",
+    "package.json",
+    "README.md",
     "validateContract.js",
     "validateContract.min.js"
   ],
