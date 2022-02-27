@@ -144,8 +144,9 @@ You can also insert the `CDN` link in the field at the bottom for javascript.
 | `length`            | **Used for text length**<br>The first argument of the options is for `min` and the second argument is for `max`.<br>Default options, `options: [0, 500]`                                          |
 | `email`             | **Used for valid email type**                                                                                                                                                                     |
 | `password`          | **Used for complex password type and length**<br>the arguments are as follows => `[minLength, maxLength, minLowerCase, minUpperCase, minNumber]`.<br>Default options, `options: [4, 10, 0, 0, 1]` |
-| `match`             | **Checks whether it has the same value as another parameter in the same payload.**                                                                                                                |
 | `phone`             | **Used for phone number type**                                                                                                                                                                    |
+| `match`             | **Checks whether it has the same value as another parameter in the same payload.**                                                                                                                |
+| `optional`          | **Checks whether it can take an empty value.**                                                                                                                                                    |
 
 Don't be surprised if other types are added soon :wink:
 
